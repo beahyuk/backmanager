@@ -47,7 +47,6 @@
     background-color: rgb(255, 255, 255);
     color: #333;
     text-align: center;
-    line-height: 200px;
     height: 485px;
     border-right: 2px solid rgb(238, 238, 238);
   }

@@ -1,13 +1,12 @@
 <template>
-<el-container direction="vertical">
-    <el-col style="height: 100px">
+<el-container direction="vertical" style="height: 100%;">
+    <!-- <el-col style="height: 100px">
         <el-card style="height: 90px;">
             <Search ></Search>
         </el-card>
-    </el-col>
-    <el-main style="height: 585px; width:100%;background-color: rgb(255, 255, 255);">
-        <NaviMenu></NaviMenu>
-        <Table></Table>
+    </el-col> -->
+    <el-main style=" width:100%;background-color: rgb(255, 255, 255);">
+        <NaviMenu :componentTree="componentTree"></NaviMenu>
     </el-main>
 </el-container>
 </template>
@@ -23,10 +22,10 @@ export default {
     },
     data() {
         return {
+            componentTree: []
         }
     },
     methods: {
-
         showTable(){
             var that = this
             var testProjectId = that.$route.query.testproject_id
@@ -39,9 +38,8 @@ export default {
             .then(function(response){
                 var res = response.data
                 if(res.success){
-                    // that.tableData = res.testProjectInfo
-                    console.log("projectComponentInfo",res)
-                    // that.showUserInfo()
+                    console.log("projectComponent",res)
+                    that.componentTree = res.projectComponent
                 }
             }) 
             .catch(function (error) { // 请求失败处理

@@ -30,7 +30,7 @@ export default {
         userphone: '',
         usermail: '',
         password: '',
-      }
+      },
     }
   },
   methods: {
@@ -63,7 +63,7 @@ export default {
         this.$axios.get(this.host + '/user/login',{
                                                     params:param
                                                     })
-         .then(function(response){
+          .then(function(response){
           var res = response.data
           console.log("data", res)
           if(res.success){
@@ -73,6 +73,7 @@ export default {
               that.$router.push({ path: "/home", 
                                   query:that.formdata
                                 })
+              localStorage.setItem("userInfo",JSON.stringify(res))
           }else {
               that.$message.error("登录失败,"+res.msg)
               that.cancelClick()
