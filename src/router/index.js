@@ -29,13 +29,15 @@ const ProjectManage = () =>
 const Version = () =>
     import ("views/category1/pages/projectmanage/Version")
 const Module = () =>
-    import("views/category2/pages/testproject/Module")
+    import ("views/category2/pages/testproject/Module")
 const TestProject = () =>
     import ("views/category2/TestProject")
 const CaseManage = () =>
     import ("views/category2/CaseManage")
 const Keywords = () =>
     import ("views/category2/Keywords")
+const GlobalFunc = () =>
+    import ("views/category2/pages/keywords/GlobalFunc")
 const TestPlan = () =>
     import ("views/category2/TestPlan")
 const Running = () =>
@@ -73,34 +75,34 @@ const routes = [{
         name: "category1",
         component: Category1,
         children: [{
-            path: '',
-            redirect: 'Cate1Welcome',
-        },
-        {
-            path: 'Cate1Welcome',
-            component: Cate2Welcome
-        },
-        {
-            path: '用户管理',
-            name: 'usermanage',
-            component: UserManage
-        },
-        {
-            path: '部门管理',
-            name: 'sectionmanage',
-            component: SectionManage
-        },
-        {
-            path: '项目管理',
-            name: 'projectmanage',
-            component: ProjectManage,
-        },
-        {
-            path: '项目管理/version',
-            name: 'version',
-            component: Version
-        }
-    ]
+                path: '',
+                redirect: 'Cate1Welcome',
+            },
+            {
+                path: 'Cate1Welcome',
+                component: Cate2Welcome
+            },
+            {
+                path: '用户管理',
+                name: 'usermanage',
+                component: UserManage
+            },
+            {
+                path: '部门管理',
+                name: 'sectionmanage',
+                component: SectionManage
+            },
+            {
+                path: '项目管理',
+                name: 'projectmanage',
+                component: ProjectManage,
+            },
+            {
+                path: '项目管理/version',
+                name: 'version',
+                component: Version
+            }
+        ]
     },
     {
         path: "/测试管理",
@@ -118,7 +120,7 @@ const routes = [{
                 path: '测试项目',
                 name: 'testproject',
                 component: TestProject,
-                children:[]
+                children: []
             },
             {
                 path: '测试项目/module',
@@ -134,6 +136,11 @@ const routes = [{
                 path: '关键字',
                 name: 'keywords',
                 component: Keywords
+            },
+            {
+                path: '关键字/globalfunc',
+                name: 'globalfunc',
+                component: GlobalFunc
             },
             {
                 path: '测试计划',
