@@ -28,6 +28,7 @@ import Category2 from "views/category2/Category2"
     },
     methods: {
         showTestProjectInfo(){
+            console.log("***********")
             var that = this;
             let param = new URLSearchParams()
             this.$axios.get(this.host + '/test/testproject/querypagelist',{
@@ -35,9 +36,10 @@ import Category2 from "views/category2/Category2"
                                                         })
             .then(function(response){
                 var res = response.data
+                console.log("2",res)
                 if(res.success){
                     that.tableData = res.testProjectInfo
-                    // console.log("allTestProjectInfo",that.tableData)
+                    console.log("allTestProjectInfo",that.tableData)
                     // that.showUserInfo()
                 }
             }) 

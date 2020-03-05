@@ -47,10 +47,6 @@
     background-color: rgb(255, 255, 255);
     color: #333;
     text-align: center;
-<<<<<<< HEAD
-    line-height: 200px;
-=======
->>>>>>> aea649f2a6e73252a2f535e5373efe66575895b7
     height: 485px;
     border-right: 2px solid rgb(238, 238, 238);
   }
