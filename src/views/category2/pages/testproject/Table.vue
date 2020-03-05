@@ -35,6 +35,7 @@ import Category2 from "views/category2/Category2"
                                                         })
             .then(function(response){
                 var res = response.data
+               console.log("2222222222222222222222222222")
                 if(res.success){
                     that.tableData = res.testProjectInfo
                     // console.log("allTestProjectInfo",that.tableData)

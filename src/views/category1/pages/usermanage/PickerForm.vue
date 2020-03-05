@@ -64,8 +64,6 @@
   }
 </script>
 <style scoped>
-    .search-row{
-    }
     .el-form-item{
         size: inherit
     }
