@@ -5,9 +5,16 @@
   </div>
   <div id="loginBox">
     <h3>登录</h3>
-    <el-form :model="formdata" :rules="LoginRules" ref="loginForm" label-width="0px">
+    <el-form
+     :model="formdata" 
+     :rules="LoginRules"
+      ref="loginForm"
+       label-width="0px">
       <!-- 用户名 -->
-      <el-form-item label="" prop="userName" style="margin-top:40px">
+      <el-form-item 
+      label="" 
+      prop="userName" 
+      style="margin-top:40px">
         <el-row>
           <el-col :span="2">
             <span class="iconfont">&#xe654;</span>
@@ -41,9 +48,6 @@
           </el-col>
         </el-row>
       </el-form-item>
-
-      
-
     </el-form>
   </div>
 </div>
