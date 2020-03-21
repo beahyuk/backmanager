@@ -6,6 +6,8 @@ const Register = () =>
     import ("views/login/Register.vue")
 const MainHome = () =>
     import ('components/common/MainHome.vue')
+const HomePage = () =>
+    import ("views/home/HomePage.vue")
 const Category1 = () =>
     import ('views/category1/Category1')
 const Category2 = () =>
@@ -68,7 +70,50 @@ const routes = [{
     {
         path: '/home',
         name: 'home',
-        component: MainHome
+        component: HomePage,
+        children: [{
+                name: "usermanage",
+                path: "/usermanage",
+                component: UserManage
+            },
+            {
+                name: "sectionmanage",
+                path: "/sectionmanage",
+                component: SectionManage
+            }, {
+                name: "projectmanage",
+                path: "/projectmanage",
+                component: ProjectManage
+            }, {
+                name: "testproject",
+                path: "/testproject",
+                component: TestProject
+            }, {
+                name: "casemanage",
+                path: "/casemanage",
+                component: CaseManage
+            }, {
+                name: "keywords",
+                path: "/keywords",
+                component: Keywords
+            }, {
+                name: "testplan",
+                path: "/testplan",
+                component: TestPlan
+            }, {
+                name: "Running",
+                path: "/Running",
+                component: Running
+            }, {
+                name: "TaskRunning",
+                path: "/TaskRunning",
+                component: TaskRunning
+            }, {
+                name: "BackTest",
+                path: "/BackTest",
+                component: BackTest
+            }
+        ]
     },
     {
         path: "/系统管理",
