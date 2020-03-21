@@ -1,13 +1,16 @@
 <template>
+<el-card class="elcard">
     <el-container direction="vertical">
         <el-col style="height: 200px">
-           <el-card header="用户查询" style="height: 190px;">
+           <!-- <el-card header="用户查询" style="height: 190px;"> -->
                <PickerForm @pickerform="pickerformrtn" ></PickerForm>
-            </el-card>
+            <!-- </el-card> -->
         </el-col>
-        <el-main style="height: 485px;"><Table :UserData="userData"></Table></el-main>
+        <!-- <el-main style="height: 485px;"> -->
+            <Table :UserData="userData"></Table>
+            <!-- </el-main> -->
     </el-container>
-
+</el-card>
 </template>
 
 <script>
@@ -36,6 +39,9 @@ export default {
 </script>
 
 <style scoped>
+.elcard{
+    height: 100%;
+}
   .el-card {
     border: 1px solid #eee;
     box-shadow:0 0 10px rgb(190, 190, 190);

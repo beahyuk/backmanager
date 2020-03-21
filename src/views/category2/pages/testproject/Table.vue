@@ -19,7 +19,6 @@
 </template>
 
 <script>
-import Category2 from "views/category2/Category2"
   export default {
     data() {
       return {
