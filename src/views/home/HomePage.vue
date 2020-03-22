@@ -5,7 +5,7 @@
   <el-header>
     <div>
       <img src="~assets/img/12.png" alt="">
-      <span>测试后台系统</span>
+      <span>测试后台管理系统</span>
     </div>
     <el-button type="info" @click="logout">退出</el-button>
   </el-header>
@@ -14,20 +14,27 @@
     <!-- 侧边栏 -->
     <el-aside :width="isCollapse ? '64px' : '200px'">
       <div class="toggle-button" @click="toggleCollapse">|||</div>
-
-      <el-menu background-color="#333744" text-color="#fff" active-text-color="#409EFF" :collapse="isCollapse" :unique-opened="true" :router="true" :collapse-transition="false" :default-active="$route.path">
+        <!-- 导航栏 -->
+      <el-menu 
+      background-color="#333744" 
+      text-color="#fff" 
+      active-text-color="#409EFF" 
+      :collapse="isCollapse" 
+      :unique-opened="true" 
+      :router="true" 
+      :collapse-transition="false" 
+      :default-active="$route.path">
         <el-submenu :index="item.id+''" v-for="item in menulist" :key="item.id">
           <template slot="title">
-              <i :class="iconObj[item.id]"></i>
+              <i :class="item.icon"></i>
               <span>{{item.authName}}</span>
           </template>
           <el-menu-item :index="'/'+subItem.path" v-for="subItem in item.children" :key="subItem.id">
             <template slot="title">
               <i class="el-icon-menu"></i>
-              <span>{{subItem.authName}}</span>
+              <span >{{subItem.authName}}</span>
             </template>
           </el-menu-item>
-
         </el-submenu>
       </el-menu>
     </el-aside>
@@ -56,6 +63,8 @@ export default {
           id: 1,
           order:1,
           authName: "系统管理",
+          path:"usermanage",
+          icon:"el-icon-user-solid",
           children: [{
               id: 11,
               path: "usermanage",
@@ -74,6 +83,7 @@ export default {
           ]
         }, {
           id: 2,
+          icon:"el-icon-suitcase",
           authName: "测试管理",
           children: [{
             id: 21,
@@ -87,6 +97,7 @@ export default {
         },
         {
           id: 3,
+          icon:"el-icon-tickets",
           authName: "用例执行",
           children: [{
             id: 31,
@@ -103,6 +114,7 @@ export default {
           }]
         }, {
           id: 4,
+          icon:"el-icon-monitor",
           authName: "结果分析",
           children: [{
             id: 41,
@@ -155,7 +167,6 @@ export default {
 
 .el-aside {
   background-color: #333744;
-
   .el-menu {
     border-right: none;
   }

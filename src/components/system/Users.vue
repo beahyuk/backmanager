@@ -5,7 +5,9 @@
     <el-breadcrumb-item>系统管理</el-breadcrumb-item>
     <el-breadcrumb-item>用户管理</el-breadcrumb-item>
   </el-breadcrumb>
+  <!-- 主页内容 -->
   <el-card>
+    <!-- 搜索表单 -->
     <el-form ref="form" :model="form" :inline="true" class="demo-form-inline">
       <el-row type="flex" class="row-bg">
         <el-col :span="5">
@@ -37,18 +39,25 @@
       </el-row>
 
     </el-form>
-    <el-table :data="UserData" :stripe="true" style="width: 100%">
-      <el-table-column fixed="left" type="selection" width="50" label=""></el-table-column>
-      <el-table-column prop="user_head" label="头像" width="120"></el-table-column>
-      <el-table-column prop="user_name" label="用户名" width="150"></el-table-column>
-      <el-table-column prop="section_name" label="所属部门" width="180"></el-table-column>
-      <el-table-column prop="user_role" label="所属职位" width="160"></el-table-column>
-      <el-table-column prop="user_mail" label="邮箱" width="160"></el-table-column>
-      <el-table-column prop="user_phone" label="手机号" width="150"></el-table-column>
-      <el-table-column fixed="right" label="操作" width="100">
+    <!-- 搜索结果展示表格 -->
+    <el-table :data="UserData" :stripe="true" border strip style="width: 100%">
+      <el-table-column fixed="left" type="selection"  label=""></el-table-column>
+      <el-table-column prop="user_head" label="头像" ></el-table-column>
+      <el-table-column prop="user_name" label="用户名" ></el-table-column>
+      <el-table-column prop="section_name" label="所属部门"></el-table-column>
+      <el-table-column prop="user_role" label="所属职位" ></el-table-column>
+      <el-table-column prop="user_mail" label="邮箱" ></el-table-column>
+      <el-table-column prop="user_phone" label="手机号" ></el-table-column>
+      <el-table-column fixed="right" label="操作" >
         <template slot-scope="scope">
-          <el-button @click="handleClick(scope.row)" type="text" size="small">查看</el-button>
-          <el-button type="text" size="small">编辑</el-button>
+          <!-- 查看 -->
+          <el-tooltip :enterable="false" effect="dark" content="查看" placement="top-start">
+            <el-button type="primary" icon="el-icon-view" size="mini" @click="handleClick(scope.row)"></el-button>
+          </el-tooltip>
+          <!-- 编辑 -->
+          <el-tooltip :enterable="false" effect="dark" content="编辑" placement="top-start">
+            <el-button type="success" icon="el-icon-edit" size="mini"></el-button>
+          </el-tooltip>
         </template>
       </el-table-column>
     </el-table>
@@ -85,7 +94,7 @@ export default {
         .then(function (response) {
           var res = response.data
           that.UserData = res.userInfoList
-          console.log(that.UserData,res)
+          console.log(that.UserData, res)
         })
         .catch(function (error) { // 请求失败处理
           console.log(error);
