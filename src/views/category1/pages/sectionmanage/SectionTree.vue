@@ -1,6 +1,12 @@
 <template>
 <div class="container">
-    <el-tree class="filter-tree" :data="data" :props="defaultProps" default-expand-all ref="tree" @node-click="showUserInfo"></el-tree>
+    <el-tree 
+    class="filter-tree" 
+    :data="data" 
+    :props="defaultProps" 
+    default-expand-all 
+    ref="tree" 
+    @node-click="showUserInfo"></el-tree>
 </div>
 </template>
 
@@ -37,6 +43,7 @@ export default {
             var that = this
             if(data.sectionTreeList==null){
                 this.getUserList(data)
+                console.log("展示用户信息：",data)
             }
         },
 
@@ -44,13 +51,13 @@ export default {
             var that = this;
             let param = new URLSearchParams()
             param.append('section_name', data.section_name)
+            console.log("姓名：",data)
             this.$axios.get(this.host + '/user/querypagelist',{
                                                         params:param
                                                         })
             .then(function(response){
                 var res = response.data
                 that.$emit('getuserlist', res)
-                // console.log("user_info",res)
             }) 
             .catch(function (error) { // 请求失败处理
                 console.log(error);

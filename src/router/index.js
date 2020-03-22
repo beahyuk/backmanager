@@ -10,6 +10,8 @@ const Welcome = () =>
     import ("views/home/Welcome.vue")
 const Users = () =>
     import ("components/system/Users.vue")
+const Sections = () =>
+    import ("components/system/Sections.vue")
 const Category4 = () =>
     import ('views/category4/Category4')
 const UserManage = () =>
@@ -62,7 +64,10 @@ const routes = [{
         name: 'home',
         redirect: "/welcome",
         component: HomePage,
-        children: [{ path: '/welcome', component: Welcome },
+        children: [{
+                path: '/welcome',
+                component: Welcome
+            },
             {
                 name: "usermanage",
                 path: "/usermanage",
@@ -71,8 +76,9 @@ const routes = [{
             {
                 name: "sectionmanage",
                 path: "/sectionmanage",
-                component: SectionManage
-            }, {
+                component: Sections
+            },
+            {
                 name: "projectmanage",
                 path: "/projectmanage",
                 component: ProjectManage
