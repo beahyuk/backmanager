@@ -91,8 +91,12 @@ export default {
             authName: "测试项目"
           }, {
             id: 22,
-            path: "testplan",
-            authName: "测试计划"
+            path: "casemanage",
+            authName: "用例管理"
+          }, {
+            id: 23,
+            path: "keywords",
+            authName: "关键字"
           }]
         },
         {
@@ -107,10 +111,6 @@ export default {
             id: 32,
             path: "TaskRunning",
             authName: "任务执行"
-          }, {
-            id: 33,
-            path: "BackTest",
-            authName: "回归测试"
           }]
         }, {
           id: 4,
@@ -119,7 +119,7 @@ export default {
           children: [{
             id: 41,
             path: "Category4",
-            authName: "选项1"
+            authName: "测试报告"
           }]
         }
       ],
@@ -171,6 +171,7 @@ export default {
     border-right: none;
   }
 }
+
 .el-main {
   background-color: #eaedf1;
 }

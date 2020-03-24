@@ -12,6 +12,11 @@ const Users = () =>
     import ("components/system/Users.vue")
 const Sections = () =>
     import ("components/system/Sections.vue")
+const Projects = () =>
+    import ("components/system/Projects.vue")
+const ProjectVer = () =>
+    import ("components/system/ProjectVer.vue")
+
 const Category4 = () =>
     import ('views/category4/Category4')
 const UserManage = () =>
@@ -32,14 +37,12 @@ const Keywords = () =>
     import ("views/category2/Keywords")
 const GlobalFunc = () =>
     import ("views/category2/pages/keywords/GlobalFunc")
-const TestPlan = () =>
-    import ("views/category2/TestPlan")
+
 const Running = () =>
     import ("views/category3/Running.vue")
 const TaskRunning = () =>
     import ("views/category3/TaskRunning.vue")
-const BackTest = () =>
-    import ("views/category3/BackTest.vue")
+
 
 
 
@@ -81,8 +84,13 @@ const routes = [{
             {
                 name: "projectmanage",
                 path: "/projectmanage",
-                component: ProjectManage
+                component: Projects
             }, {
+                path: '/projectmanage/version',
+                name: 'version',
+                component: ProjectVer
+            },
+            {
                 name: "testproject",
                 path: "/testproject",
                 component: TestProject
@@ -95,10 +103,6 @@ const routes = [{
                 path: "/keywords",
                 component: Keywords
             }, {
-                name: "testplan",
-                path: "/testplan",
-                component: TestPlan
-            }, {
                 name: "Running",
                 path: "/Running",
                 component: Running
@@ -106,10 +110,6 @@ const routes = [{
                 name: "TaskRunning",
                 path: "/TaskRunning",
                 component: TaskRunning
-            }, {
-                name: "BackTest",
-                path: "/BackTest",
-                component: BackTest
             }, {
                 name: "Category4",
                 path: "/Category4",
