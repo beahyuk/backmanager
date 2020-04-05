@@ -1,14 +1,14 @@
 <template>
-  <el-table :data="tableData" :stripe="true" style="width: 100%" :highlight-current-row="true" @row-click="toModuleInfo">
-    <el-table-column fixed="left" type="selection" width="50" label=""></el-table-column>
-    <el-table-column prop="testproject_name" label="测试项目名称" width="200">
+  <el-table :data="tableData" :stripe="true" border style="width: 100%" :highlight-current-row="true" @row-click="toModuleInfo">
+    <el-table-column fixed="left" type="selection"  label=""></el-table-column>
+    <el-table-column prop="testproject_name" label="测试项目名称">
     </el-table-column>
-    <el-table-column prop="section_name" label="所属部门" width="160"></el-table-column>
-    <el-table-column prop="project_name" label="项目名称" width="160"></el-table-column>
-    <el-table-column prop="version_number" label="版本名称" width="160"></el-table-column>
-    <el-table-column prop="user_name" label="创建者" width="150"></el-table-column>
-    <el-table-column prop="create_time" label="创建时间" width="160"></el-table-column>
-    <el-table-column fixed="right" label="操作" width="100">
+    <el-table-column prop="section_name" label="所属部门" ></el-table-column>
+    <el-table-column prop="project_name" label="项目名称" ></el-table-column>
+    <el-table-column prop="version_number" label="版本名称" ></el-table-column>
+    <el-table-column prop="user_name" label="创建者" ></el-table-column>
+    <el-table-column prop="create_time" label="创建时间" ></el-table-column>
+    <el-table-column fixed="right" label="操作" >
       <template slot-scope="scope">
         <el-button @click="handleClick(scope.row)" type="text" size="medium">编辑</el-button>
       </template>
@@ -49,7 +49,7 @@
         toModuleInfo(val){
             // console.log(val)
             var that = this
-            that.$router.push({ name: "module",
+            that.$router.push({ name: "module1",
                                 query: val
                                 })
         },

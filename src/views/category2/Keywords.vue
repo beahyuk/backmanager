@@ -1,10 +1,17 @@
 <template>
+<div>
+
+      <el-breadcrumb separator-class="el-icon-arrow-right">
+    <el-breadcrumb-item :to="{ path: '/home' }">首页</el-breadcrumb-item>
+    <el-breadcrumb-item>测试管理</el-breadcrumb-item>
+    <el-breadcrumb-item>关键字</el-breadcrumb-item>
+  </el-breadcrumb>
 <el-card class="box-card">
   <!-- 1.上面导航部分 -->
   <Header></Header>
   <!-- 2.下方表格 -->
   
-</el-card>
+</el-card></div>
 </template>
 
 <script>

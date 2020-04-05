@@ -16,7 +16,10 @@ const Projects = () =>
     import ("components/system/Projects.vue")
 const ProjectVer = () =>
     import ("components/system/ProjectVer.vue")
-
+const TestPro = () =>
+    import ("components/test/TestProject.vue")
+const ModuleTest = () =>
+    import ("components/test/ModuleTest.vue")
 const Category4 = () =>
     import ('views/category4/Category4')
 const UserManage = () =>
@@ -93,8 +96,15 @@ const routes = [{
             {
                 name: "testproject",
                 path: "/testproject",
-                component: TestProject
-            }, {
+                component: TestPro
+            },
+            // 待删除的路由转换
+            {
+                name: "moduletest",
+                path: "/testproject/moduletest",
+                component: ModuleTest
+            },
+            {
                 name: "casemanage",
                 path: "/casemanage",
                 component: CaseManage

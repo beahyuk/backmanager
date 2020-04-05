@@ -1,7 +1,13 @@
 <template>
     <el-container>
-        <el-aside width="20%" >
-            <el-tree :data="data" :props="defaultProps" @node-expand="handleNodeClick" @node-collapse="handleNodeClose" :indent="25" :highlight-current="true" ></el-tree>
+        <el-aside  >
+            <el-tree :data="data" 
+            :props="defaultProps" 
+            @node-expand="handleNodeClick"
+             @node-collapse="handleNodeClose" 
+             :indent="25" 
+             :highlight-current="true" ></el-tree>
+
         </el-aside>
         <el-main style="height:100%;">
             <SuiteTable v-if="Visible=='suite'" :SuiteData="suiteData" ></SuiteTable>
@@ -11,13 +17,15 @@
 </template>
 
 <script>
+import Tree from  "views/category2/pages/testproject/testmodule/Tree/"
 import SuiteTable from "views/category2/pages/testproject/testmodule/SuiteTable"
 import ScriptTable from "views/category2/pages/testproject/testmodule/ScriptTable"
 export default {
     props:["componentTree"],
     components:{
         SuiteTable,
-        ScriptTable
+        ScriptTable,
+        Tree
     },
     data() {
         return {
@@ -55,8 +63,6 @@ export default {
                 that.Visible = "script"
                 console.log("scriptData",that.scriptData)
             }
-
-
         },
 
         handleNodeClose(){
@@ -86,4 +92,6 @@ export default {
     .el-tree-node__content:hover {
         background-color: #66b1ff87;
     }
+
+
 </style>
