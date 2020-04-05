@@ -1,12 +1,12 @@
 <template>
     <el-table :data="tableData" :stripe="true" style="width: 100%" :highlight-current-row="true">
     <el-table-column fixed="left" type="selection" width="50" label=""></el-table-column>
-    <el-table-column prop="suite_name" label="Suite名称" width="160">
+    <el-table-column prop="suite_name" label="Suite名称">
     </el-table-column>
-    <el-table-column prop="create_time" label="创建时间" width="160"></el-table-column>
-    <el-table-column prop="modify_time" label="修改时间" width="160"></el-table-column>
-    <el-table-column prop="description" label="描述" width="150"></el-table-column>
-    <el-table-column fixed="right" label="操作" width="150">
+    <el-table-column prop="create_time" label="创建时间" ></el-table-column>
+    <el-table-column prop="modify_time" label="修改时间" ></el-table-column>
+    <el-table-column prop="description" label="描述" ></el-table-column>
+    <el-table-column fixed="right" label="操作" >
       <template slot-scope="scope">
         <el-button @click="EditClick(scope.row)" type="text" size="medium">编辑</el-button>
         <el-button @click="ViewClick(scope.row)" type="text" size="medium">查看</el-button>

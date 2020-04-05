@@ -66,20 +66,11 @@ export default {
     }
   },
   mounted() {
-    // this.valueId = this.value,    // 初始值
     this.name = this.label // 待删除
     this.initHandle()
   },
   methods: {
     // 初始化值
-    // initHandle() {
-    //   if (this.valueId) {
-    //     this.valueTitle = this.$refs.selectTree.getNode(this.valueId).data[this.props.label] // 初始化显示
-    //     this.$refs.selectTree.setCurrentKey(this.valueId) // 设置默认选中
-    //     this.defaultExpandedKey = [this.valueId] // 设置默认展开
-    //   }
-    //   this.initScroll()
-    // },
     initHandle() {
       if (this.name) {
         this.valueTitle = this.$refs.selectTree.getNode(this.name).data[this.props.label] // 初始化显示

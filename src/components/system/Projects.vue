@@ -50,9 +50,9 @@
           </el-dialog>
         </template>
       </el-table-column>
-      <el-table-column prop="section_name" label="所属部门" width="200"></el-table-column>
-      <el-table-column prop="describe" label="描述" width="240"></el-table-column>
-      <el-table-column fixed="right" label="操作" width="150">
+      <el-table-column prop="section_name" label="所属部门" ></el-table-column>
+      <el-table-column prop="describe" label="描述" ></el-table-column>
+      <el-table-column fixed="right" label="操作" >
         <template slot-scope="scope">
           <el-button @click="handleClick(scope.row)" type="text" size="medium">编辑</el-button>
         </template>

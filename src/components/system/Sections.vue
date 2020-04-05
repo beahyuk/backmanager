@@ -12,7 +12,7 @@
         <span>选择部门：</span>
         <el-cascader :options="sectionList" :props="sectionProps" clearable v-model="selectSectionKeys" @change="SectionChanged">
         </el-cascader>
-        <el-table :data="UserData" stripe border>
+        <el-table :data="UserData" stripe >
           <el-table-column fixed="left" prop="user_head" label="头像"></el-table-column>
           <el-table-column prop="user_name" label="用户名"></el-table-column>
           <el-table-column prop="section_name" label="所属部门"></el-table-column>

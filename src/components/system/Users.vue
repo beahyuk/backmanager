@@ -40,7 +40,7 @@
 
     </el-form>
     <!-- 搜索结果展示表格 -->
-    <el-table :data="UserData" :stripe="true" border strip style="width: 100%">
+    <el-table :data="UserData" :stripe="true"  strip style="width: 100%">
       <el-table-column fixed="left" type="selection"  label=""></el-table-column>
       <el-table-column prop="user_head" label="头像" ></el-table-column>
       <el-table-column prop="user_name" label="用户名" ></el-table-column>

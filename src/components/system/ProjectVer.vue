@@ -12,12 +12,12 @@
       <el-row>
         <el-button type="primary" plain>添加</el-button>
         <el-table :data="tableData" :stripe="true" style="width: 100%">
-          <el-table-column fixed="left" type="selection" width="50" label=""></el-table-column>
-          <el-table-column prop="version_number" label="版本号" width="200"></el-table-column>
-          <el-table-column prop="project_name" label="项目名称" width="200"></el-table-column>
-          <el-table-column prop="imprint" label="版本说明" width="200"></el-table-column>
-          <el-table-column prop="remark" label="备注" width="180"></el-table-column>
-          <el-table-column label="详细计划" width="180">
+          <el-table-column fixed="left" type="selection" label=""></el-table-column>
+          <el-table-column prop="version_number" label="版本号" ></el-table-column>
+          <el-table-column prop="project_name" label="项目名称" ></el-table-column>
+          <el-table-column prop="imprint" label="版本说明"></el-table-column>
+          <el-table-column prop="remark" label="备注" ></el-table-column>
+          <el-table-column label="详细计划" >
             <template slot-scope="scope">
               <el-button @click="handleClick(scope.row)" type="text" size="medium">查看</el-button>
               <el-dialog title="版本计划" :visible.sync="dialogTableVisible" :append-to-body="true">
