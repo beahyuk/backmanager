@@ -26,7 +26,6 @@ export default {
     props: {
       type: Object,
       default: {
-        // value:'id',             // ID字段名
         label: 'title', // 显示名称
         children: 'children' // 子级字段名
       }
